@@ -10,8 +10,9 @@ from app.users import crud
 from typing import List
 from fastapi.responses import Response
 from app.utils.out_standard import success, error
-
-router = APIRouter()
+# from app.routers import router
+# router = APIRouter()
+from app.users import users as router
 
 
 @router.post("/", response_model=schemas.User)
@@ -20,6 +21,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     if db_user:
         return {"data": "", "resCode": 1, "msg": "已存在此用户"}
     return crud.create_user(db=db, user=user)
+
 
 @router.get("/")
 def get_user(db: Session = Depends(get_db)):

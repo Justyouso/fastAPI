@@ -2,11 +2,11 @@
 # @Author: wangchao
 # @Time: 20-5-21 下午5:10
 
-# from fastapi import APIRouter
+from fastapi import APIRouter
 
-# from app.users.views import router as router_users
 
-# router = APIRouter()
+users = APIRouter()
 # router.include_router(router, tags=["users"], prefix="/users")
 
-from app.users.views import router as users
+# from app.users.views import router as users
+from app.users import views

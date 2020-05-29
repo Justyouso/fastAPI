@@ -8,8 +8,8 @@ from app.models.articles import Person as Article
 # from app.database import db1
 from sqlalchemy.orm import Session
 
-router = APIRouter()
-
+# router = APIRouter()
+from app.routers import router
 
 # @router.get("/")
 # def get_articles():
